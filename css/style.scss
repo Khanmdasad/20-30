@@ -39,14 +39,26 @@ body{
         padding: 75px;
         border-radius: 20px;
         position: relative;
+ 
+        .head{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-        h1{
-            font-family: 'Merriweather', serif;
-            color: var(--text-color);
-            font-size: 32px;
-            font-style: normal;
-            font-weight: 900;
-            line-height: normal;
+            h1{
+                font-family: 'Merriweather', serif;
+                color: var(--text-color);
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: normal;
+            }
+
+            .menu{
+                display: none;
+                font-size: 30px;
+            }
         }
 
         // nav start
@@ -113,6 +125,11 @@ body{
                 // itemn1 child 2 class end
             }
             // item ends
+            // menu start
+            .menu{
+                display: none;
+            }
+            // menu ends
         }
         // nav ends
 
@@ -121,8 +138,7 @@ body{
             display: flex;
             justify-content: center;            
             flex-direction: column;
-            gap: 20px;
-            
+            gap: 20px;      
 
             // row start
             .row{
@@ -133,29 +149,33 @@ body{
                 // flex-wrap: wrap;
                 gap: 16px;
 
+                // card start
                 .card{
                     width: 327px;
                     height: 250px;
+                    padding: 24px;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     gap: 20px;
                     box-sizing: border-box;
-                    padding: 24px;
                     border-radius: 25px;
                     background: var(--card-bg-color);
                     cursor: pointer;
 
+                    // info start
                     .info{
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
 
+                        // item-info start
                         .item-info{
                             display: flex;
                             flex-direction: column;
                             gap: 5px;
-                        
+
+                            //heading start
                             .heading{
                                 color:var(--text-color);
                                 font-family: Merriweather;
@@ -163,8 +183,10 @@ body{
                                 font-style: normal;
                                 font-weight: 900;
                                 line-height: normal;
-                           } 
+                           }
+                            //heading ends
 
+                            // text start
                            .text{
                                 color: var(--text-color);
                                 font-family: Poppins;
@@ -174,7 +196,10 @@ body{
                                 line-height: normal;
                                 word-wrap: break-word;
                            }
+                           // text ends
                         }
+                        // item-info end
+
 
                         // item-link start
                         .item-link{
@@ -199,6 +224,7 @@ body{
                         }
                         // item-link end
                     }
+                    // info ends
                 }
                 // card  ends
                 
@@ -215,4 +241,138 @@ body{
         // main end
     }
     // contianer ends
+}
+
+@media all and (max-width: 400px) {
+    //wrapper start
+    .wrapper{
+        min-height: 100vh;
+        min-width: 100vw;
+        overflow-x: hidden;     
+        
+        // contianer start
+        .contianer{
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            background: var(--page-bg-color);
+            flex-wrap: wrap;
+            
+            .head{
+                width: 100%;
+    
+                h1{
+                    font-size: 24px; 
+                    font-weight: 900;
+                    line-height: normal;
+                }
+    
+                .menu{
+                    display: block;
+                    font-size: 20px;
+                }
+            }
+    
+
+            // nav start
+            nav{
+                display: none;
+
+                .menu{
+                    display: block;
+                }
+            }
+            // nav ends
+
+            // card start
+            .main{
+                height: 90vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                // row start
+                .row{
+                    display: flex;
+                    flex-direction: column;
+
+                    .card{
+                        width: 300px;
+                        height: 200px;
+                        box-sizing: content-box;
+                        padding: 0%;
+                        gap: 10px;
+                        // info start
+
+                        img{
+                            width: 75px;
+                            height: 75px;
+                        }
+
+                    .info{
+                        gap: 5px;
+
+                        // item-info start
+                        .item-info{                        
+
+                            //heading start
+                            .heading{
+                                color:var(--text-color);
+                                font-family: Merriweather;
+                                font-size: 15px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                           }
+                            //heading ends
+
+                            // text start
+                           .text{
+                                color: var(--text-color);
+                                font-family: Poppins;
+                                font-size: 11px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;
+                                
+                           }
+                           // text ends
+                        }
+                        // item-info end
+
+
+                        // item-link start
+                        .item-link{
+                            width: 150px;                           
+                            gap: 4px;
+
+                            a{
+                                background: var();
+                                border: 1px solid var(--active-card-color);
+                                border-radius: 10px;
+                                padding: 2px 6px;
+
+                                color: var(--about-text-color);
+                                font-family: Poppins;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                            }
+                        }
+                        // item-link end
+                    }
+
+                    }
+                }
+            }
+            // card ends
+        }
+        // cotnianer ends
+   }
+    //wrapper ends
 }
